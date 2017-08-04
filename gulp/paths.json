@@ -11,7 +11,7 @@
     "robots": "./build/",
     "forms": "./build/forms/",
     "sitemap": "./build/",
-    "extra": "./build/"
+    "static": "./build/"
   },
   "src": {
     "html": "./src/*.html",
@@ -27,7 +27,7 @@
     "robots": "./src/robots.txt",
     "phpmailer": "./composer_modules/phpmailer/**/*.*",
     "forms": "./src/forms/*.php",
-    "extra": "./src/extra/**/*.*",
+    "static": "./src/static/**/*.*",
     "cache": {
       "path": "./src/",
       "file": "./src/cache.json"
@@ -47,7 +47,7 @@
     "htaccess": "./src/.htaccess",
     "robots": "./src/robots.txt",
     "forms": "./src/forms/**/*.php",
-    "extra": "./src/extra/**/*.*"
+    "static": "./src/static/**/*.*"
   },
   "lint": {
     "configs": "./src/lint/",

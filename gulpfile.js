@@ -443,12 +443,12 @@ gulp.task('lint:html5', function() {
   }, function onDone() {});
 });
 
-// Relocate extra files
+// Relocate static files
 // -----------------------------
-gulp.task('relocate-extra-files', function() {
-  return gulp.src(PATHS.src.extra)
-    .pipe(production(newer(PATHS.build.extra)))
-    .pipe(gulp.dest(PATHS.build.extra));
+gulp.task('relocate-static-files', function() {
+  return gulp.src(PATHS.src.static)
+    .pipe(production(newer(PATHS.build.static)))
+    .pipe(gulp.dest(PATHS.build.static));
 });
 
 // Webserver
@@ -472,7 +472,7 @@ gulp.task('watch', function(){
   gulp.watch([PATHS.watch.htaccess], ['htaccess:build']);
   gulp.watch([PATHS.watch.robots], ['robots:build']);
   gulp.watch([PATHS.watch.forms], ['forms:build']);
-  gulp.watch([PATHS.watch.extra], ['relocate-extra-files']);
+  gulp.watch([PATHS.watch.static], ['relocate-static-files']);
 });
 
 // Main section
@@ -508,7 +508,7 @@ gulp.task('build', function() {
       'htaccess:build',
       'robots:build',
       'forms:build',
-      'relocate-extra-files'
+      'relocate-static-files'
     ],
     'html:build'
   )
