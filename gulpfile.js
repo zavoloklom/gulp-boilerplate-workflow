@@ -233,7 +233,7 @@ gulp.task('fonts:build', function() {
 // -----------------------------
 gulp.task('css:build', function(){
   return gulp.src(PATHS.src.css)
-    //.pipe(production(newer(PATHS.build.css + 'main.min.css')))
+  //.pipe(production(newer(PATHS.build.css + 'main.min.css')))
     .pipe(development(sourcemaps.init()))
     .pipe(sass({
       sourceMap: true,
@@ -372,17 +372,6 @@ gulp.task('image:build', function() {
   )
 });
 
-// Files relocation
-// -----------------------------
-gulp.task('htaccess:build', function() {
-  gulp.src(PATHS.src.htaccess)
-    .pipe(gulp.dest(PATHS.build.htaccess));
-});
-gulp.task('robots:build', function() {
-  gulp.src(PATHS.src.robots)
-    .pipe(gulp.dest(PATHS.build.robots));
-});
-
 // Forms relocation
 // -----------------------------
 gulp.task('forms:phpmailer', function() {
@@ -469,8 +458,6 @@ gulp.task('watch', function(){
   gulp.watch([PATHS.watch.images.original], ['image:build']);
   gulp.watch([PATHS.watch.images.optimized], ['image:build']);
   gulp.watch([PATHS.watch.favicon], ['favicon:build']);
-  gulp.watch([PATHS.watch.htaccess], ['htaccess:build']);
-  gulp.watch([PATHS.watch.robots], ['robots:build']);
   gulp.watch([PATHS.watch.forms], ['forms:build']);
   gulp.watch([PATHS.watch.static], ['relocate-static-files']);
 });
@@ -505,8 +492,6 @@ gulp.task('build', function() {
     [
       'fonts:build',
       'favicon:build',
-      'htaccess:build',
-      'robots:build',
       'forms:build',
       'relocate-static-files'
     ],
@@ -516,7 +501,7 @@ gulp.task('build', function() {
 
 // That thing does'n work as expected
 /**
-gulp.task('start', function() {
+ gulp.task('start', function() {
   runSequence(
     'clean',
     'build',
@@ -524,4 +509,4 @@ gulp.task('start', function() {
     'watch'
   );
 });
-**/
+ **/

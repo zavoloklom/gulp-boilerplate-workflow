@@ -54,6 +54,6 @@ Temporary Items
 /node_modules
 
 ### Composer modules
-/composer_modules
+/vendor
 /composer.lock
 /composer.phar

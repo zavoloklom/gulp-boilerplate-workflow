@@ -7,8 +7,6 @@
     "fonts": "./build/assets/fonts/",
     "images": "./build/images/",
     "favicon": "./build/favicons/",
-    "htaccess": "./build/",
-    "robots": "./build/",
     "forms": "./build/forms/",
     "sitemap": "./build/",
     "static": "./build/"
@@ -23,8 +21,6 @@
     },
     "fonts": "./src/fonts/**/*.ttf",
     "favicon": "./src/favicon/favicon.png",
-    "htaccess": "./src/.htaccess",
-    "robots": "./src/robots.txt",
     "phpmailer": "./composer_modules/phpmailer/**/*.*",
     "forms": "./src/forms/*.php",
     "static": "./src/static/**/*.*",
@@ -44,8 +40,6 @@
     },
     "fonts": "./src/fonts/*.ttf",
     "favicon": "./src/favicon/favicon.*",
-    "htaccess": "./src/.htaccess",
-    "robots": "./src/robots.txt",
     "forms": "./src/forms/**/*.php",
     "static": "./src/static/**/*.*"
   },
