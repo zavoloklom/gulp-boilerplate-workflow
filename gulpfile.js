@@ -439,6 +439,10 @@ gulp.task('relocate-static-files', function() {
     .pipe(production(newer(PATHS.build.static)))
     .pipe(gulp.dest(PATHS.build.static));
 });
+gulp.task('htaccess:build', function() {
+  gulp.src(PATHS.src.htaccess)
+    .pipe(gulp.dest(PATHS.build.htaccess));
+});
 
 // Webserver
 // -----------------------------
@@ -460,6 +464,7 @@ gulp.task('watch', function(){
   gulp.watch([PATHS.watch.favicon], ['favicon:build']);
   gulp.watch([PATHS.watch.forms], ['forms:build']);
   gulp.watch([PATHS.watch.static], ['relocate-static-files']);
+  gulp.watch([PATHS.watch.htaccess], ['htaccess:build']);
 });
 
 // Main section
@@ -493,7 +498,8 @@ gulp.task('build', function() {
       'fonts:build',
       'favicon:build',
       'forms:build',
-      'relocate-static-files'
+      'relocate-static-files',
+      'htaccess:build'
     ],
     'html:build'
   )

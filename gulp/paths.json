@@ -9,7 +9,8 @@
     "favicon": "./build/favicons/",
     "forms": "./build/forms/",
     "sitemap": "./build/",
-    "static": "./build/"
+    "static": "./build/",
+    "htaccess": "./build"
   },
   "src": {
     "html": "./src/*.html",
@@ -24,6 +25,7 @@
     "phpmailer": "./vendor/phpmailer/**/*.*",
     "forms": "./src/forms/*.php",
     "static": "./src/static/**/*.*",
+    "htaccess": "./src/.htaccess",
     "cache": {
       "path": "./src/",
       "file": "./src/cache.json"
@@ -41,7 +43,8 @@
     "fonts": "./src/fonts/*.ttf",
     "favicon": "./src/favicon/favicon.*",
     "forms": "./src/forms/**/*.php",
-    "static": "./src/static/**/*.*"
+    "static": "./src/static/**/*.*",
+    "htaccess": "./src/.htaccess"
   },
   "lint": {
     "configs": "./src/lint/",
