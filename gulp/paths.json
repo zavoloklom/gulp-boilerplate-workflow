@@ -21,7 +21,7 @@
     },
     "fonts": "./src/fonts/**/*.ttf",
     "favicon": "./src/favicon/favicon.png",
-    "phpmailer": "./composer_modules/phpmailer/**/*.*",
+    "phpmailer": "./vendor/phpmailer/**/*.*",
     "forms": "./src/forms/*.php",
     "static": "./src/static/**/*.*",
     "cache": {
