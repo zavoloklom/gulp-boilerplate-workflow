@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp          = require('gulp'),
+  gutil           = require('gulp-util'),
   through         = require('through2'),
   del             = require('del'),
   vinylPaths      = require('vinyl-paths'),
@@ -74,6 +75,7 @@ gulp.task('dependencies:css', function() {
   return gulp.src(DEPENDENCIES.css)
     .pipe(production(newer(PATHS.build.css + 'dependencies.min.css')))
     .pipe(concat('dependencies.css'))
+    .pipe(gulp.dest(PATHS.build.css))
     .pipe(cleanCSS())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(PATHS.build.css))
@@ -214,6 +216,7 @@ gulp.task('fonts:css', function () {
     .pipe(production(newer(PATHS.build.css + 'fonts.min.css')))
     .pipe(vinylPaths(del))
     .pipe(concat('fonts.css'))
+    .pipe(gulp.dest(PATHS.build.css))
     .pipe(cleanCSS())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(PATHS.build.css))
@@ -233,7 +236,7 @@ gulp.task('fonts:build', function() {
 // -----------------------------
 gulp.task('css:build', function(){
   return gulp.src(PATHS.src.css)
-  //.pipe(production(newer(PATHS.build.css + 'main.min.css')))
+    .pipe(production(newer(PATHS.build.css + 'main.min.css')))
     .pipe(development(sourcemaps.init()))
     .pipe(sass({
       sourceMap: true,
@@ -342,7 +345,6 @@ gulp.task('cache-bust:fonts:css', function () {
     }))
     .pipe(gulp.dest(PATHS.src.cache.path));
 });
-
 
 // Images/sprites Compilation
 // -----------------------------
