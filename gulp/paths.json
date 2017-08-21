@@ -13,7 +13,7 @@
     "htaccess": "./build"
   },
   "src": {
-    "html": "./src/*.html",
+    "html": "./src/html/**/*.html",
     "js": "./src/js/main.js",
     "css": "./src/scss/main.scss",
     "images": {
@@ -33,7 +33,7 @@
   },
   "watch": {
     "server": "./build/**/*.*",
-    "html": "./src/**/*.html",
+    "html": "./src/html/**/*.html",
     "js": "./src/js/**/*.js",
     "css": "./src/scss/**/*.scss",
     "images": {
@@ -48,7 +48,7 @@
   },
   "lint": {
     "configs": "./src/lint/",
-    "html": "./src/**/*.html",
+    "html": "./src/html/**/*.html",
     "js": "./src/js/**/_*.js",
     "scss": "./src/scss/**/*.scss"
   },
